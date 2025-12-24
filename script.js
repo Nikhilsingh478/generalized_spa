@@ -291,3 +291,27 @@ if (aboutSection) {
       window.open(buildLink(number, message), '_blank', 'noopener');
     });
   })();
+
+
+  
+        // Contact Form Logic (Keep this near the form if it uses emailjs)
+        const popup1 = document.getElementById("popupSuccess");
+
+        document.getElementById("spaContactForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            emailjs.sendForm("service_5qc1eig", "template_f6c99wi", this)
+                .then(() => {
+                    popup1.classList.add("show");
+
+                    setTimeout(() => {
+                        popup1.classList.remove("show");
+                    }, 2500);
+
+                    this.reset();
+                })
+                .catch((error) => {
+                    alert("Failed to send message. Try again.");
+                    console.error(error);
+                });
+        });

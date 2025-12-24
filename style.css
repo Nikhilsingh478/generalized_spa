@@ -1034,3 +1034,99 @@ footer {
     clip: rect(0 0 0 0); clip-path: inset(50%);
     white-space: nowrap; border: 0; padding: 0; margin: -1px;
   }
+
+  /* ---- CONTACT FORM STYLES ---- */
+
+#contact {
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.spa-form {
+    max-width: 600px;
+    width: 100%;
+    background: rgba(255,255,255,0.12);
+    padding: 40px;
+    border-radius: 24px;
+    backdrop-filter: blur(14px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+    color: var(--color-softwhite);
+}
+
+/* Glass Inputs */
+.spa-input, .spa-textarea {
+    width: 100%;
+    padding: 14px;
+    margin: 10px 0 22px;
+    border: none;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.25);
+    backdrop-filter: blur(6px);
+    color: #000;                  /* BLACK TEXT INSIDE INPUT */
+    font-size: 15px;
+    outline: none;
+}
+
+/* Placeholder color */
+.spa-input::placeholder,
+.spa-textarea::placeholder {
+    color: #333;
+}
+
+/* Button */
+.spa-btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 14px;
+    background: var(--color-darkbrown);
+    color: var(--color-softwhite);
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.spa-btn:hover {
+    transform: scale(1.02);
+}
+
+/* ---- Popup ---- */
+#popupSuccess {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.7);
+    background: rgba(255,255,255,0.25);
+    backdrop-filter: blur(10px);
+    padding: 30px 40px;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 18px;
+    color: var(--color-darkbrown);
+    box-shadow: 0 4px 25px rgba(0,0,0,0.3);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.35s ease;
+}
+
+/* Popup visible state */
+#popupSuccess.show {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    pointer-events: auto;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .spa-form {
+        padding: 25px;
+        border-radius: 18px;
+    }
+
+    #popupSuccess {
+        width: 85%;
+        padding: 25px;
+    }
+}
